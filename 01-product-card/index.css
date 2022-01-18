@@ -1,1 +1,160 @@
 /* Смотри сколько снизу свободного места! Оно идеально подойдёт, чтобы писать твои стили! */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-block-product: #f6f6f6;
+
+  --main-black: #2f2f2f;
+  --card-tag-new: #fdcff3;
+  --card-tag-final: #ffcf56;
+
+  --card-btn: #42940f;
+  --card-btn-active: #1f5200;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+.wrapper {
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+.product {
+  background-color: var(--bg-block-product);
+  padding: 40px 20px 60px;
+}
+
+.product-week {
+}
+
+.product-week__title {
+  font-size: 48px;
+  line-height: 72px;
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  justify-content: space-around;
+  grid-gap: 20px;
+}
+
+.card__item {
+  position: relative;
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
+.card__item-img {
+  border-radius: 12px 12px 0 0;
+  width: 100%;
+}
+
+.card__tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+}
+
+.card__tag-text {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 8px;
+  color: var(--main-black);
+}
+
+.card__tag-text_product_new {
+  background-color: var(--card-tag-new);
+  margin-right: 16px;
+}
+.card__tag-text_product_final {
+  background-color: var(--card-tag-final);
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  min-height: 275px;
+}
+
+.card__content-title {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.card__content-description {
+  flex: 1 1 auto;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  margin-bottom: 24px;
+  overflow: hidden;
+  max-height: 96px;
+  text-overflow: ellipsis;
+}
+
+.card__btn {
+  font-size: 18px;
+  font-weight: 900;
+  width: 100%;
+  padding: 15px 0;
+  border: 2px solid var(--card-btn);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--card-btn);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.card__btn:hover {
+  background-color: var(--card-btn);
+  color: #fff;
+  border: none;
+  border: 2px solid transparent;
+}
+
+.card__btn:active {
+  background-color: var(--card-btn-active);
+  border: 2px solid transparent;
+}
+
+.card__btn.card__btn_disabled {
+  background: #4e4e4e;
+  border: 1px solid #4e4e4e;
+  color: #fff;
+  cursor: default;
+}
+
+@media (max-width: 420px) {
+  .product-week__title {
+    line-height: 50px;
+  }
+
+  .card {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .card__tag {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card__tag-text:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
